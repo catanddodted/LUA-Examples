@@ -1,0 +1,23 @@
+-- This would go in StarterPlAYER > StarterCharacterScripts as a LocalScript.
+
+local UserInputService = game:GetService("UserInputService")
+
+local Character = script.Parent
+local Humanoid = Character:WaitForChild("Humanoid")
+local isRunning = false
+
+UserInputService.InputBegan:Connect(function(input)
+	if input.KeyCode == Enum.KeyCode.LeftShift then
+		if not isRunning then
+			isRunning = true
+			Humanoid.WalkSpeed = 32	
+		end
+	end
+end)
+
+UserInputService.InputEnded:Connect(function(input)
+	if input.KeyCode == Enum.KeyCode.LeftShift then
+		Humanoid.WalkSpeed = 16
+		isRunning = false
+	end
+end)
