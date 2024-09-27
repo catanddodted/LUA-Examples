@@ -1,0 +1,40 @@
+-- Assuming you have three parts already in the workspace named "OriginalPart", "OriginalPart2", and "OriginalPart3"
+
+wait(5)
+local cpf = Instance.new("Folder")
+cpf.Name = "Copied Parts Folder"
+cpf.Parent = game.Workspace
+print("CPF folder created!")
+
+local op = game.Workspace:FindFirstChild("OriginalPart")
+local op2 = game.Workspace:FindFirstChild("OriginalPart2")
+local op3 = game.Workspace:FindFirstChild("OriginalPart3")
+
+op.Parent = game.Workspace
+op.BrickColor = BrickColor.new("Really red")
+print("Finished editing the OP!")
+
+op2.Parent = game.Workspace
+op2.BrickColor = BrickColor.Random()
+print("Finished editing the OP2!")
+
+op3.Parent = game.Workspace
+op3.BrickColor = BrickColor.new("Teal")
+print("Finished editing the OP3!")
+
+while true do
+	local cp = op:Clone()
+	cp.BrickColor = BrickColor.new("Lime green")
+	cp.Parent = cpf
+	wait(0.001)
+	
+	local cp2 = op2:Clone()
+	cp2.BrickColor = BrickColor.Random()
+	cp2.Parent = cpf
+	wait(0.001)
+	
+	local cp3 = op3:Clone()
+	cp3.BrickColor = BrickColor.new("Navy blue")
+	cp3.Parent = cpf
+	wait(0.001)
+end
